@@ -70,6 +70,7 @@ python3 -m devgagan
 - Star the repo, and fork it in desktop mode
 - Click on  [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 - Fill your values and click deploy ✅
+-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/brucewaynepioneer/KYa)
 
 ## Deploy on Render
 - Fork and star the repo
