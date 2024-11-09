@@ -52,7 +52,7 @@ async def get_msg(userbot, sender, edit_id, msg_link, i, message):
             if msg.empty is not None:
                 return None                          
             if msg.media:
-                if msg.media == MessageMediaType.WEB_PAGE:
+                if msg.media == MessageMediaType.WEB_PAGE_PREVIEW:
                     target_chat_id = user_chat_ids.get(chatx, chatx)
                     edit = await app.edit_message_text(target_chat_id, edit_id, "Cloning...")
                     devgaganin = await app.send_message(sender, msg.text.markdown)
