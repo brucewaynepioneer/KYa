@@ -38,9 +38,15 @@ async def get_msg(userbot, sender, edit_id, msg_link, i, message):
     
     if 't.me/c/' in msg_link or 't.me/b/' in msg_link:
         if 't.me/b/' not in msg_link:
-            chat = int('-100' + str(msg_link.split("/")[-2]))
+            parts = msg_link.split("/")
+            chat = int('-100' + parts[3])
+            msg_id = parts[-1]
+
         else:
-            chat = msg_link.split("/")[-2]       
+            parts = msg_link.split("/")
+            chat = parts[-2]
+            msg_id = parts[-1]
+                 
         file = ""
         try:
             chatx = message.chat.id
