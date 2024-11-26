@@ -37,17 +37,13 @@ async def get_msg(userbot, sender, edit_id, msg_link, i, message):
 
     
     if 't.me/c/' in msg_link or 't.me/b/' in msg_link:
+        parts = msg_link.split("/")
         if 't.me/b/' not in msg_link:
-            parts = msg_link.split("/")
-            chat = int('-100' + str(parts[3]))
-            msg_id = parts[-1]
-
+            chat = int('-100' + str(parts[parts.index('c') + 1])) # topic group/subgroup support enabled
         else:
-            parts = msg_link.split("/")
-            chat = parts[-2]
-            msg_id = parts[-1]
-                 
+            chat = msg_link.split("/")[-2]       
         file = ""
+        
         try:
             chatx = message.chat.id
             msg = await userbot.get_messages(chat, msg_id)
